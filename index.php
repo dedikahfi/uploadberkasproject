@@ -54,8 +54,8 @@ document.getElementById("date").value = today.getFullYear() + '-' + ('0' + (toda
             <option value="BA">BA</option>
             <option value="Tembusan">Tembusan</option>
             </select><br><br>
-            Tanggal Upload<input class="form-control" type="date" value="<?php echo date('Y-m-d'); ?>" name="tanggalupload" required disabled/><br>
-          
+            <!--Tanggal Upload<input class="form-control" type="date" name="tglupload" value="<?php echo date('Y-m-d'); ?>" required disabled/><br>
+            -->
             Upload Berkas<input class="form-control" type="file" name="upload"/><br><br>
             <button class="btn btn-success" type="submit" class="btn btn-success form-control" name="submit"><span class="glyphicon glyphicon-upload"></span> Upload</button>
             <button class="btn btn-danger" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -76,7 +76,15 @@ document.getElementById("date").value = today.getFullYear() + '-' + ('0' + (toda
     <thead>
       <tr>  
         <th>No</th>
+        <th>Tanggal</th>
+        <th>No Surat</th>
         <th>File Name</th>
+        <th>Asal Departemen</th>
+        <th>Departemen Tujuan</th>
+        <th>Perihal</th>
+        <th>Jumlah Lampiran</th>
+        <th>Cuplikan Redaksi Surat</th>
+        <th>Jenis Surat</th>
         <th>Action</th>
       </tr>
     </thead>
@@ -91,7 +99,15 @@ document.getElementById("date").value = today.getFullYear() + '-' + ('0' + (toda
         $name = explode('/', $fetch['file']);
         ?>
         <td><?php echo $fetch['file_id']?></td>
+        <td><?php echo $fetch['tanggal']?></td>
+        <td><?php echo $fetch['nosurat']?></td>
         <td><?php echo $fetch['name']?></td>
+        <td><?php echo $fetch['asaldepartemen']?></td>
+        <td><?php echo $fetch['departementujuan']?></td>
+        <td><?php echo $fetch['perihal']?></td>
+        <td><?php echo $fetch['jumlahlampiran']?></td>
+        <td><?php echo $fetch['cuplikanredaksisurat']?></td>
+        <td><?php echo $fetch['jenissurat']?></td>
         <td><a href="download.php?file=<?php echo $name[1]?>" class="btn btn-primary"><span class="glyphicon glyphicon-download"></span> Download</a></td>
 
       </tr>
